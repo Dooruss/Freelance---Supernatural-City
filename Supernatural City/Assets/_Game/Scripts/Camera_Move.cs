@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Camera_Move : MonoBehaviour
 {
     private Vector3 movement;
-    private float Speed = 2f;
+    private float Speed = 7f;
 
     public void Moves(InputAction.CallbackContext context)
     {
