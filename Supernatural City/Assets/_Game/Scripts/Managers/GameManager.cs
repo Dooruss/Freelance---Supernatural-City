@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int Day;
-    private int Year;
+
     private int Population;
     [Header("int Resources")]
     private int Money;

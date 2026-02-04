@@ -300,9 +300,21 @@ MonoBehaviour:
     m_ActionId: 5d21d371-0f69-49ad-bc48-55eb55f863f6
     m_ActionName: 'Camera/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a4625e35-e082-49f6-be18-e8a14f92671f
-    m_ActionName: 'UI/Pause[/Keyboard/escape]'
+      m_Calls:
+      - m_Target: {fileID: 19940037}
+        m_TargetAssemblyTypeName: Camera_Move, Assembly-CSharp
+        m_MethodName: Scroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 47dce73f-d0ae-4280-a778-e90bec7ca1c9
+    m_ActionName: 'Camera/Scroll[/Mouse/scroll]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Camera
@@ -320,6 +332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04eea22b71f90ee478f2578c619d6e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Camera_Move
+  Multiplier: 10
+  MinZoom: 2
+  MaxZoom: 10
+  SmoothTime: 0.5
+  Velocity: 0
 --- !u!1 &27601586
 GameObject:
   m_ObjectHideFlags: 0

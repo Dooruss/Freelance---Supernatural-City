@@ -14,6 +14,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Value",
+                    "id": "47dce73f-d0ae-4280-a778-e90bec7ca1c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -71,32 +80,15 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "5603e6ce-e26e-46e7-9b7c-a1084fb3296c",
-            "actions": [
-                {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "a4625e35-e082-49f6-be18-e8a14f92671f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "643a61be-4f11-4438-97a9-ad7eae751ec0",
-                    "path": "<Keyboard>/escape",
+                    "id": "59511b13-40dc-476b-93dd-1ca45df90176",
+                    "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause",
+                    "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
