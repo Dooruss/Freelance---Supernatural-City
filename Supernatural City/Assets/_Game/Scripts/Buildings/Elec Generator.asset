@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524bd7d02e9fd0840997d8126cf56375, type: 3}
+  m_Name: Elec Generator
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  Building_Name: Power Generator
+  Need_Road: 1
+  People_Amount: 0
+  Building_Sprite: {fileID: 0}
+  Need_Electricity: 0
+  Need_Water: 0
+  Need_Magic: 0
+  Functional: 0
+  Producing: 2
