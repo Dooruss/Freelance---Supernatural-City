@@ -5,7 +5,7 @@ public class BuildManager : MonoBehaviour
 {
     // Placing system by https://www.youtube.com/watch?v=snUe2oa_iM0 
     [SerializeField] Tilemap CurrentTileMap;
-    [SerializeField] TileBase CurrentTile;
+    [SerializeField] public TileBase CurrentTile;
     [SerializeField] Camera Camera;
 
 
