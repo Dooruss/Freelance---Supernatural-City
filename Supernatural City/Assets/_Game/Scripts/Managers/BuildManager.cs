@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class BuildManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class BuildManager : MonoBehaviour
     {
         Vector3Int pos = CurrentTileMap.WorldToCell(Camera.ScreenToWorldPoint(Input.mousePosition));
 
-        if (CurrentTile != null && Input.GetMouseButtonDown(0))
+        if (CurrentTile != null && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             PlaceTile(pos);
         }
