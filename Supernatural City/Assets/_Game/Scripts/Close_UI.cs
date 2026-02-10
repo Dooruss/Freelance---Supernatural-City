@@ -9,7 +9,7 @@ public class Close_UI : MonoBehaviour
         foreach (GameObject obj in UI_Objects)
         {
             obj.SetActive(false);
-            TurnOnObj.SetActive(true);
+            if (TurnOnObj != null) { TurnOnObj.SetActive(true); }
         }
     }
 }

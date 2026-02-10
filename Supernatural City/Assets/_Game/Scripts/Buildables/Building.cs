@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "Building", menuName = "Scriptable Objects/Building")]
 public class Building : ScriptableObject
@@ -6,7 +7,7 @@ public class Building : ScriptableObject
     public string Building_Name;
     public bool Need_Road;
     public int People_Amount;
-    public Sprite Building_Sprite;
+    public TileBase Building_Sprite;
     // Needs
     public float Need_Electricity;
     public float Need_Water;
