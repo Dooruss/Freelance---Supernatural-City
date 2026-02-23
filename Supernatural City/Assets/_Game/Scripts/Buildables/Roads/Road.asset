@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524bd7d02e9fd0840997d8126cf56375, type: 3}
+  m_Name: Road
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  Building_Name: Base Road
+  Need_Road: 0
+  People_Amount: 0
+  Building_Sprite: {fileID: 11400000, guid: edad2dee7344f1445b05e7c22299773f, type: 2}
+  Need_Electricity: 0
+  Need_Water: 0
+  Need_Magic: 0
+  Functional: 1
+  Producing: 0
+  Type: 0

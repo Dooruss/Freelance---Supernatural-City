@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    private int Population;
+    public int Population;
     [Header("int Resources")]
-    private int Money;
+    public int Money;
     private int Research_Points;
     [Header("Demand")]
     public int Demand_Housing;

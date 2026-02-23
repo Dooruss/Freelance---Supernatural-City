@@ -7,6 +7,7 @@ public class Building : ScriptableObject
     public string Building_Name;
     public bool Need_Road;
     public int People_Amount;
+    public int Cost;
     public TileBase Building_Sprite;
     // Needs
     public float Need_Electricity;

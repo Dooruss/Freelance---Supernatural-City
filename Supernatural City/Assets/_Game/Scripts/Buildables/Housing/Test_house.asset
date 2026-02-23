@@ -15,8 +15,10 @@ MonoBehaviour:
   Building_Name: Test House
   Need_Road: 1
   People_Amount: 4
-  Building_Sprite: {fileID: 0}
+  Building_Sprite: {fileID: 11400000, guid: 39a73a29a84dae549b9477e817d468ca, type: 2}
   Need_Electricity: 10
   Need_Water: 10
   Need_Magic: 10
   Functional: 0
+  Producing: 0
+  Type: 1
