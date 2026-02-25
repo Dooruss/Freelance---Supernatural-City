@@ -15,6 +15,7 @@ MonoBehaviour:
   Building_Name: Base Road
   Need_Road: 0
   People_Amount: 0
+  Cost: 1
   Building_Sprite: {fileID: 11400000, guid: edad2dee7344f1445b05e7c22299773f, type: 2}
   Need_Electricity: 0
   Need_Water: 0

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_Money;
     [SerializeField] private TextMeshProUGUI Text_Research_Points;
     [SerializeField] private TextMeshProUGUI Text_Population;
+    [Header("Other")]
+    [SerializeField] private Tilemap Buildable_Tilemap; // For saving the tiles
+
 
     void Start()
     {
@@ -46,7 +50,6 @@ public class GameManager : MonoBehaviour
     }
 
     #region Save Data
-    //save da
     void SaveInformation()
     {
         PlayerPrefs.SetInt("Money", Money);

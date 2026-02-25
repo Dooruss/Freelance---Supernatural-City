@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +11,7 @@ public class BuildManager : MonoBehaviour
     [SerializeField] Tilemap CurrentTileMap;
     [SerializeField] public TileBase CurrentTile;
     [SerializeField] public Building CurrentObject;
+    [SerializeField] private Building RoadTile;
     [SerializeField] Camera Camera;
     public bool BulldoseEnable;
     private GameManager gameManager;
@@ -37,28 +39,49 @@ public class BuildManager : MonoBehaviour
     {
         if (gameManager.Money >= Building.Cost)
         {
-            Pos.z = 0;
-            Pos = new Vector3Int(Pos.x, Pos.y, Pos.z);
-            CurrentTileMap.SetTile(Pos, CurrentTile);
-            gameManager.Money -= Building.Cost;
-
-            if (Building.Type == Building.Building_Type.Housing)
+            if (!CurrentTileMap.HasTile(Pos))
             {
-                gameManager.Population += Building.People_Amount;
+                print(!CurrentTileMap.HasTile(Pos));
+
+                switch (Building.Type)
+                {
+                    case Building.Building_Type.Road:
+                        BuildItem(Pos, Building);
+                        break;
+                    case Building.Building_Type.Housing:
+                        BuildItem(Pos, Building);
+                        gameManager.Population += Building.People_Amount;
+                        break;
+                    case Building.Building_Type.Commercial:
+                        //yay shops
+                        BuildItem(Pos, Building);
+                        break;
+                    case Building.Building_Type.Park:
+                        //Yay happy
+                        BuildItem(Pos, Building);
+                        break;
+                }
+
             }
         }
     }
+
+    void BuildItem(Vector3Int Pos, Building Building)
+    {
+        Pos.z = 0;
+        Pos = new Vector3Int(Pos.x, Pos.y, Pos.z);
+        CurrentTileMap.SetTile(Pos, CurrentTile);
+        gameManager.Money -= Building.Cost;
+    }
+
+    //INCL: Bulldose , Clearcurrentitle, Setcurrentitle , Deletetile
+    #region Deleting & Setting the Currentile
 
     void DeleteTile(Vector3Int Pos, Building Building)
     {
         Pos.z = 0;
         Pos = new Vector3Int(Pos.x, Pos.y, Pos.z);
         CurrentTileMap.SetTile(Pos, null);
-        gameManager.Money += Building.Cost / 2;
-        if (Building.Type == Building.Building_Type.Housing)
-        {
-            gameManager.Population -= Building.People_Amount;
-        }
     }
 
     public void SetCurrentTile(Building Building)
@@ -70,11 +93,24 @@ public class BuildManager : MonoBehaviour
     public void ClearCurrentTile()
     {
         CurrentTile = null;
-        CurrentObject = null;
     }
 
     public void BulldoseBoolSet(bool Setter)
     {
         BulldoseEnable = Setter;
     }
+    #endregion 
+
+    #region Building Specifics
+    private bool CheckRoadNeed(Building Building)
+    {
+        if (Building.Need_Road)
+        {
+            //check if theres a road next to it
+            return true;
+        } 
+        return false;
+    }
+
+    #endregion
 }
