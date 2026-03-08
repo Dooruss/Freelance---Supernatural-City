@@ -17,8 +17,10 @@ public class Building : ScriptableObject
     // Producing?
     [SerializeField] public Product_Produced Producing;
     [SerializeField] public Building_Type Type;
+    [SerializeField] public bool ProducesMoney;
+    [SerializeField] public int MoneyProduceAmount;
     public enum Product_Produced { None, Commercial, Electricity, Water, Magic }
-    public enum Building_Type { Road , Housing , Commercial , Park , Generator }
+    public enum Building_Type { Road, Housing, Commercial, Park, Generator }
 
     public void Check_Functional(float Water_Amount, float Electricity_Amount, float Magic_Amount)
     {

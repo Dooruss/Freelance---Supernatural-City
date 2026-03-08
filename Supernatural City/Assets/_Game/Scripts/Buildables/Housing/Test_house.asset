@@ -23,3 +23,5 @@ MonoBehaviour:
   Functional: 0
   Producing: 0
   Type: 1
+  ProducesMoney: 0
+  MoneyProduceAmount: 20

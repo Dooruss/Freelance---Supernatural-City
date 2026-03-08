@@ -1,22 +1,24 @@
+using TMPro;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    private int Day;
-    private int Year;
+    public int Day;
+    public int Month;
+    public int Year;
     public bool IsPaused;
     [SerializeField] private GameObject PauseScreen;
-
-    void Start()
-    {
-        Day = 1;
-        Year = 1;
-    }
-
+    [SerializeField] private TextMeshProUGUI TimeText;
 
     void Update()
     {
         if (IsPaused) { PauseGame(false); }
+        TimeUI();
+    }
+
+    void TimeUI()
+    {
+        TimeText.text = "Date " + Day + "/ " + Month + "/ " + Year;
     }
 
     public void PauseGame(bool ByButton)
@@ -29,5 +31,10 @@ public class TimeManager : MonoBehaviour
     {
         Time.timeScale = 1;
         if (ByButton) { PauseScreen.SetActive(false); }
+    }
+
+    public void SpeedTime(float Times)
+    {
+        Time.timeScale = 1 * Times;
     }
 }

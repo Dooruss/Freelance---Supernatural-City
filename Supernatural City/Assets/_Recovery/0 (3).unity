@@ -1427,19 +1427,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 194867096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 404648966}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: SpeedTime
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &194867096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,19 +1547,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 195246042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 404648966}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: SpeedTime
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 3
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &195246042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,12 +2700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09b9defb5dd44140a4e0b6adb8bea41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
-  Day: 0
-  Month: 0
-  Year: 0
   IsPaused: 0
   PauseScreen: {fileID: 76167120}
-  TimeText: {fileID: 1424472290}
 --- !u!114 &404648967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2747,8 +2719,6 @@ MonoBehaviour:
   CurrentObject: {fileID: 0}
   RoadTile: {fileID: 0}
   Camera: {fileID: 19940033}
-  AllHousing:
-  - {fileID: 11400000, guid: 0a8c3535ec8af15439822467f3e8e14c, type: 2}
   BulldoseEnable: 0
 --- !u!114 &404648968
 MonoBehaviour:
@@ -2787,12 +2757,10 @@ MonoBehaviour:
   Demand_Elec: 0
   Demand_Water: 0
   Demand_Magic: 0
-  MoneyGeneration: 0
   Text_Money: {fileID: 286452797}
   Text_Research_Points: {fileID: 1519883860}
   Text_Population: {fileID: 1035807650}
-  Buildable_Tilemap: {fileID: 0}
-  TimeManager: {fileID: 0}
+  Buildable_Tilemap: {fileID: 989800452}
 --- !u!1 &407099876
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,19 +6464,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1189622376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 404648966}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: PauseGame
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1189622376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6778,19 +6734,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1279162726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 404648966}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: UnPauseGame
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1279162726
 MonoBehaviour:
   m_ObjectHideFlags: 0
