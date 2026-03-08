@@ -21,7 +21,7 @@ public class BuildManager : MonoBehaviour
     Dictionary<Vector3Int, Building> PlacedBuildings = new Dictionary<Vector3Int, Building>();
     // Hi Dorus from a couple days for now incase u forgot how this works
     // Ty for unity discussions and Reddit for this , So like It saves a Position (Vector3Int) and like an value on it (A building type)
-    // So like to save stuff its PlacedBuildings[PositionHere] = Building; (0,0,0) = Road (For example)
+    // So like to save stuff its PlacedBuildings[PositionHere] (KEY) = Building (VALUE) ; (0,0,0) = Road (For example)
     // And to remove its PlacedBuildings.Remove(PositionHere);
 
     private void Awake()
@@ -98,8 +98,21 @@ public class BuildManager : MonoBehaviour
     void DeleteTile(Vector3Int Pos, Building Building)
     {
         Pos.z = 0;
+        if (PlacedBuildings.ContainsKey(Pos))
+        {
+            switch (Building.Type)
+            {
+                case Building.Building_Type.Housing:
+                    gameManager.Population -= Building.People_Amount;
+                    gameManager.MoneyGeneration -= Building.MoneyProduceAmount;
+                    break;
+                case Building.Building_Type.Commercial:
+                    gameManager.MoneyGeneration -= Building.MoneyProduceAmount;
+                    break;
+            }
+            PlacedBuildings.Remove(Pos);
+        }
         CurrentTileMap.SetTile(Pos, null);
-        PlacedBuildings.Remove(Pos);
     }
 
     public void SetCurrentTile(Building Building)
