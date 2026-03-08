@@ -20,7 +20,7 @@ public class BuildManager : MonoBehaviour
     private GameManager gameManager;
     Dictionary<Vector3Int, Building> PlacedBuildings = new Dictionary<Vector3Int, Building>();
     // Hi Dorus from a couple days for now incase u forgot how this works
-    // Ty for unity discussions for this , So like It saves a Position (Vector3Int) and like an value on it (A building type)
+    // Ty for unity discussions and Reddit for this , So like It saves a Position (Vector3Int) and like an value on it (A building type)
     // So like to save stuff its PlacedBuildings[PositionHere] = Building; (0,0,0) = Road (For example)
     // And to remove its PlacedBuildings.Remove(PositionHere);
 
