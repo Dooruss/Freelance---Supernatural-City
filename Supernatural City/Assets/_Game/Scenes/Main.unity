@@ -2745,7 +2745,7 @@ MonoBehaviour:
   CurrentTileMap: {fileID: 989800452}
   CurrentTile: {fileID: 0}
   CurrentObject: {fileID: 0}
-  RoadTile: {fileID: 0}
+  RoadTile: {fileID: 11400000, guid: 03aac5cb518593e4a90a530d31bbe207, type: 2}
   Camera: {fileID: 19940033}
   AllHousing:
   - {fileID: 11400000, guid: 0a8c3535ec8af15439822467f3e8e14c, type: 2}

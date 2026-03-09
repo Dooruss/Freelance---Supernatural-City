@@ -72,6 +72,7 @@ public class BuildManager : MonoBehaviour
                     case Building.Building_Type.Commercial:
                         //yay shops
                         BuildItem(Pos, Building);
+                        gameManager.MoneyGeneration += Building.MoneyProduceAmount;
                         break;
                     case Building.Building_Type.Park:
                         //Yay happy
@@ -161,10 +162,26 @@ public class BuildManager : MonoBehaviour
         return false;
     }
 
-    private int ProduceItem()
+    private void ProduceItem(Building BuildingObject)
     {
-        // Produce sutff
-        return 0;
+        if (BuildingObject.Producing == Building.Product_Produced.None)
+        {
+            return;
+        }
+
+        switch (BuildingObject.Producing)
+        {
+            case Building.Product_Produced.Water:
+                gameManager.WaterGeneration += BuildingObject.Product_Produce_Amount;
+                break;
+            case Building.Product_Produced.Electricity:
+                gameManager.ElectraGeneration += BuildingObject.Product_Produce_Amount;
+                break;
+            case Building.Product_Produced.Magic:
+                gameManager.MagicGeneration += BuildingObject.Product_Produce_Amount;
+                break;
+        }
+
     }
 
     private void CheckGroundType()

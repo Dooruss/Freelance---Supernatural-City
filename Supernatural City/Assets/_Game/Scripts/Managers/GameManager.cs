@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public int Demand_Water;
     public int Demand_Magic;
     public int MoneyGeneration = 0;
+    public int WaterGeneration = 0;
+    public int MagicGeneration = 0;
+    public int ElectraGeneration = 0;
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI Text_Money;
     [SerializeField] private TextMeshProUGUI Text_Research_Points;
