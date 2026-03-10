@@ -59,6 +59,11 @@ public class BuildManager : MonoBehaviour
                     return;
                 }
 
+                if (ProduceItem(Building))
+                {
+                    Debug.Log("Doesn't produce");
+                }
+
                 switch (Building.Type)
                 {
                     case Building.Building_Type.Road:
@@ -77,6 +82,10 @@ public class BuildManager : MonoBehaviour
                     case Building.Building_Type.Park:
                         //Yay happy
                         BuildItem(Pos, Building);
+                        break;
+                    case Building.Building_Type.Generator:
+                        BuildItem(Pos, Building);
+                        gameManager.MoneyGeneration += Building.MoneyProduceAmount;
                         break;
                 }
 
@@ -162,11 +171,11 @@ public class BuildManager : MonoBehaviour
         return false;
     }
 
-    private void ProduceItem(Building BuildingObject)
+    private bool ProduceItem(Building BuildingObject)
     {
-        if (BuildingObject.Producing == Building.Product_Produced.None)
+        if (BuildingObject.Type != Building.Building_Type.Generator)
         {
-            return;
+            return true;
         }
 
         switch (BuildingObject.Producing)
@@ -181,7 +190,7 @@ public class BuildManager : MonoBehaviour
                 gameManager.MagicGeneration += BuildingObject.Product_Produce_Amount;
                 break;
         }
-
+        return false;
     }
 
     private void CheckGroundType()

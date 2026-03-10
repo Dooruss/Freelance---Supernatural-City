@@ -17,7 +17,6 @@ public class Building : ScriptableObject
     // Producing?
     [SerializeField] public Product_Produced Producing;
     [SerializeField] public Building_Type Type;
-    [SerializeField] public bool ProducesMoney;
     [SerializeField] public int MoneyProduceAmount;
     [SerializeField] public int Product_Produce_Amount;
     public enum Product_Produced { None, Commercial, Electricity, Water, Magic }

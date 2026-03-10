@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: Elec Generator
   m_EditorClassIdentifier: Assembly-CSharp::Building
   Building_Name: Power Generator
-  Need_Road: 1
+  Need_Road: 0
   People_Amount: 0
+  Cost: 0
   Building_Sprite: {fileID: 11400000, guid: 39a73a29a84dae549b9477e817d468ca, type: 2}
   Need_Electricity: 0
   Need_Water: 0
   Need_Magic: 0
   Functional: 0
   Producing: 2
+  Type: 4
+  ProducesMoney: 0
+  MoneyProduceAmount: 0
+  Product_Produce_Amount: 4
