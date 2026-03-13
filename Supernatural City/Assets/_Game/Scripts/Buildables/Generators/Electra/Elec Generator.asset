@@ -23,6 +23,5 @@ MonoBehaviour:
   Functional: 0
   Producing: 2
   Type: 4
-  ProducesMoney: 0
-  MoneyProduceAmount: 0
+  MoneyProduceAmount: 4
   Product_Produce_Amount: 4

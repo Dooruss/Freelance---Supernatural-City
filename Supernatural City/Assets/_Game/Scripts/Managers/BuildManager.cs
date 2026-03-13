@@ -11,6 +11,7 @@ public class BuildManager : MonoBehaviour
 {
     // Placing system by https://www.youtube.com/watch?v=snUe2oa_iM0 
     [SerializeField] Tilemap CurrentTileMap;
+    [SerializeField] Tilemap GroundTileMap;
     [SerializeField] public TileBase CurrentTile;
     [SerializeField] public Building CurrentObject;
     [SerializeField] private Building RoadTile;
@@ -193,9 +194,12 @@ public class BuildManager : MonoBehaviour
         return false;
     }
 
-    private void CheckGroundType()
+    private void CheckGroundType(Vector3Int Pos)
     {
+        if (GroundTileMap.HasTile(Pos))
+        {
 
+        }
     }
 
     #endregion
