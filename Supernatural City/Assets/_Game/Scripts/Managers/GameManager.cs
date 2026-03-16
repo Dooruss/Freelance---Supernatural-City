@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_MoneyPerHour;
     [SerializeField] private TextMeshProUGUI Text_Research_Points;
     [SerializeField] private TextMeshProUGUI Text_Population;
+    //Demand
     [SerializeField] private TextMeshProUGUI Text_Demand_Housing;
     [SerializeField] private TextMeshProUGUI Text_Demand_Commercial;
     [SerializeField] private TextMeshProUGUI Text_Demand_Electricity;
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         Text_MoneyPerHour.text = MoneyGeneration.ToString() + " Per Day";
         Text_Research_Points.text = Research_Points.ToString();
         Text_Population.text = Population.ToString();
+        //Demand
         Text_Demand_Housing.text = Demand_Housing.ToString();
         Text_Demand_Commercial.text = Text_Demand_Commercial.ToString();
         Text_Demand_Water.text = Demand_Water.ToString();

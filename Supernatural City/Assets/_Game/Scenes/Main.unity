@@ -3133,6 +3133,11 @@ MonoBehaviour:
   Text_MoneyPerHour: {fileID: 440734542}
   Text_Research_Points: {fileID: 1519883860}
   Text_Population: {fileID: 1035807650}
+  Text_Demand_Housing: {fileID: 833462762}
+  Text_Demand_Commercial: {fileID: 1640672364}
+  Text_Demand_Electricity: {fileID: 1791446559}
+  Text_Demand_Water: {fileID: 1316023456}
+  Text_Demand_Magic: {fileID: 1131664736}
   Buildable_Tilemap: {fileID: 0}
   TimeManager: {fileID: 0}
 --- !u!1 &407099876
@@ -6765,7 +6770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3, y: -15.585793}
+  m_AnchoredPosition: {x: 29, y: -15.585793}
   m_SizeDelta: {x: 16.3719, y: 16.4909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131664736
@@ -9916,7 +9921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.5, y: -15.585793}
+  m_AnchoredPosition: {x: -2.9, y: -15.585793}
   m_SizeDelta: {x: 16.3719, y: 16.4909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791446559
