@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 524bd7d02e9fd0840997d8126cf56375, type: 3}
-  m_Name: Road
+  m_Name: Water Generator
   m_EditorClassIdentifier: Assembly-CSharp::Building
-  Building_Name: Base Road
+  Building_Name: Water Tower
   Need_Road: 0
   People_Amount: 0
-  Cost: 100
-  Building_Sprite: {fileID: 11400000, guid: edad2dee7344f1445b05e7c22299773f, type: 2}
+  Cost: 1000
+  Building_Sprite: {fileID: 11400000, guid: 32842cc9faa4dea439555b8da09d2a62, type: 2}
   Need_Electricity: 0
   Need_Water: 0
   Need_Magic: 0
-  Functional: 1
-  Producing: 0
-  Type: 0
-  MoneyProduceAmount: 0
-  Product_Produce_Amount: 0
+  Functional: 0
+  Producing: 3
+  Type: 4
+  MoneyProduceAmount: 4
+  Product_Produce_Amount: 10

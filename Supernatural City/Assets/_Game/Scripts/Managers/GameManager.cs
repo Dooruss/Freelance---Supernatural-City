@@ -29,12 +29,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_MoneyPerHour;
     [SerializeField] private TextMeshProUGUI Text_Research_Points;
     [SerializeField] private TextMeshProUGUI Text_Population;
+    [SerializeField] private GameObject[] Infos;
     //Demand
     [SerializeField] private TextMeshProUGUI Text_Demand_Housing;
     [SerializeField] private TextMeshProUGUI Text_Demand_Commercial;
     [SerializeField] private TextMeshProUGUI Text_Demand_Electricity;
     [SerializeField] private TextMeshProUGUI Text_Demand_Water;
     [SerializeField] private TextMeshProUGUI Text_Demand_Magic;
+    [SerializeField] private TextMeshProUGUI[] Text_Production;
+    [SerializeField] private TextMeshProUGUI[] Text_Usage;
     [Header("Other")]
     [SerializeField] private Tilemap Buildable_Tilemap; // For saving the tiles
     [SerializeField] private TimeManager TimeManager;
@@ -73,6 +76,18 @@ public class GameManager : MonoBehaviour
         Text_Demand_Water.text = Demand_Water.ToString();
         Text_Demand_Electricity.text = Demand_Elec.ToString();
         Text_Demand_Magic.text = Demand_Magic.ToString();
+        //Usage & Production
+        Text_Production[0].text = "Production: " + WaterGeneration.ToString();
+        Text_Production[1].text = "Production: " + ElectraGeneration.ToString();
+        Text_Production[2].text = "Production: " + MagicGeneration.ToString();
+    }
+
+    public void CloseInfoUI()
+    {
+        foreach (GameObject info in Infos)
+        {
+            info.SetActive(false);
+        }
     }
 
     #region Save Data

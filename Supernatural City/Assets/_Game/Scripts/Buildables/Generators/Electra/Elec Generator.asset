@@ -15,7 +15,7 @@ MonoBehaviour:
   Building_Name: Power Generator
   Need_Road: 0
   People_Amount: 0
-  Cost: 0
+  Cost: 2000
   Building_Sprite: {fileID: 11400000, guid: e359cc5b62e713d4a8710a9f91089fd7, type: 2}
   Need_Electricity: 0
   Need_Water: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   Producing: 2
   Type: 4
   MoneyProduceAmount: 4
-  Product_Produce_Amount: 4
+  Product_Produce_Amount: 10
