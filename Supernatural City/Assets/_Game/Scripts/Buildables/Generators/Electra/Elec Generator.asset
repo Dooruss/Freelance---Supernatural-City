@@ -16,7 +16,7 @@ MonoBehaviour:
   Need_Road: 0
   People_Amount: 0
   Cost: 0
-  Building_Sprite: {fileID: 11400000, guid: 39a73a29a84dae549b9477e817d468ca, type: 2}
+  Building_Sprite: {fileID: 11400000, guid: e359cc5b62e713d4a8710a9f91089fd7, type: 2}
   Need_Electricity: 0
   Need_Water: 0
   Need_Magic: 0

@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Money", Money);
         PlayerPrefs.SetInt("Population", Population);
         PlayerPrefs.SetInt("Research_Points", Research_Points);
-        PlayerPrefs.SetInt("MoneyGeneration", MoneyGeneration);
         PlayerPrefs.SetInt("Day", TimeManager.Day);
         PlayerPrefs.SetInt("Month", TimeManager.Month);
         PlayerPrefs.SetInt("Year", TimeManager.Year);
@@ -91,6 +90,12 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Demand_Elec", Demand_Elec);
         PlayerPrefs.SetInt("Demand_Water", Demand_Water);
         PlayerPrefs.SetInt("Demand_Magic", Demand_Magic);
+        //Generation 
+        PlayerPrefs.SetInt("MoneyGeneration", MoneyGeneration);
+        PlayerPrefs.SetInt("ElectraGeneration", ElectraGeneration);
+        PlayerPrefs.SetInt("WaterGeneration", WaterGeneration);
+        PlayerPrefs.SetInt("MagicGeneration", MagicGeneration);
+
         SaveMap();
     }
 
@@ -99,7 +104,6 @@ public class GameManager : MonoBehaviour
         Money = PlayerPrefs.GetInt("Money", 400000);
         Population = PlayerPrefs.GetInt("Population", 0);
         Research_Points = PlayerPrefs.GetInt("Research_Points", 10);
-        MoneyGeneration = PlayerPrefs.GetInt("MoneyGeneration", 0);
         TimeManager.Day = PlayerPrefs.GetInt("Day", 1);
         TimeManager.Month = PlayerPrefs.GetInt("Month", 1);
         TimeManager.Year = PlayerPrefs.GetInt("Year", 1);
@@ -109,6 +113,11 @@ public class GameManager : MonoBehaviour
         Demand_Water = PlayerPrefs.GetInt("Demand_Water", 0);
         Demand_Elec = PlayerPrefs.GetInt("Demand_Elec", 0);
         Demand_Magic = PlayerPrefs.GetInt("Demand_Magic", 0);
+        //Generation
+        MoneyGeneration = PlayerPrefs.GetInt("MoneyGeneration", 0);
+        ElectraGeneration = PlayerPrefs.GetInt("ElectraGeneration", 0);
+        WaterGeneration = PlayerPrefs.GetInt("WaterGeneration", 0);
+        MagicGeneration = PlayerPrefs.GetInt("MagicGeneration", 0);
         LoadMap();
     }
 
