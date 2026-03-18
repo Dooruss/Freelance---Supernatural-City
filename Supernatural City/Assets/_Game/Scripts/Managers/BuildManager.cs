@@ -101,6 +101,9 @@ public class BuildManager : MonoBehaviour
         CurrentTileMap.SetTile(Pos, CurrentTile);
         PlacedBuildings[Pos] = Building;
         gameManager.Money -= Building.Cost;
+        gameManager.Usage_Elec += Building.Need_Electricity;
+        gameManager.Usage_Magic += Building.Need_Magic;
+        gameManager.Usage_Water += Building.Need_Water;
     }
 
     //INCL: Bulldose , Clearcurrentitle, Setcurrentitle , Deletetile
@@ -198,7 +201,7 @@ public class BuildManager : MonoBehaviour
     {
         if (GroundTileMap.HasTile(Pos))
         {
-
+            
         }
     }
 

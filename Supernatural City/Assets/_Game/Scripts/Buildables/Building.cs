@@ -10,9 +10,9 @@ public class Building : ScriptableObject
     public int Cost;
     public TileBase Building_Sprite;
     // Needs
-    public float Need_Electricity;
-    public float Need_Water;
-    public float Need_Magic;
+    public int Need_Electricity;
+    public int Need_Water;
+    public int Need_Magic;
     public bool Functional;
     // Producing?
     [SerializeField] public Product_Produced Producing;
@@ -22,17 +22,8 @@ public class Building : ScriptableObject
     public enum Product_Produced { None, Commercial, Electricity, Water, Magic }
     public enum Building_Type { Road, Housing, Commercial, Park, Generator }
 
-    public void Check_Functional(float Water_Amount, float Electricity_Amount, float Magic_Amount)
-    {
-        if (Water_Amount > Need_Water && Electricity_Amount > Need_Electricity && Magic_Amount > Need_Magic)
-        {
-            Functional = true;
-        }
-        else
-        {
-            Functional = false;
-            //Put Type of issue on the building like on top via UI
-        }
 
-    }
+
+
+   
 }

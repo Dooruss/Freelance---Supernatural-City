@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int Demand_Elec;
     public int Demand_Water;
     public int Demand_Magic;
+    //usage
     public int Usage_Magic;
     public int Usage_Water;
     public int Usage_Elec;
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_Demand_Magic;
     [SerializeField] private TextMeshProUGUI[] Text_Production;
     [SerializeField] private TextMeshProUGUI[] Text_Usage;
+    [SerializeField] private TextMeshProUGUI Error_Text;
+    [SerializeField] private GameObject Error_Box;
     [Header("Other")]
     [SerializeField] private Tilemap Buildable_Tilemap; // For saving the tiles
     [SerializeField] private TimeManager TimeManager;
@@ -62,8 +65,15 @@ public class GameManager : MonoBehaviour
             DeleteProgress();
         }
         Money += MoneyGeneration;
+        if (ElectraGeneration < Usage_Elec || WaterGeneration < Usage_Water || MagicGeneration < Usage_Magic)
+        {
+            Resource_Error(true);
+        } else
+        {
+            Resource_Error(false);
+        }
     }
-
+    #region UI stuff
     public void UpdateUI()
     {
         Text_Money.text = Money.ToString();
@@ -89,6 +99,14 @@ public class GameManager : MonoBehaviour
             info.SetActive(false);
         }
     }
+
+    public void Resource_Error(bool TheBool)
+    {
+        Error_Box.gameObject.SetActive(TheBool);
+
+        Error_Text.text = "You lack the following:";
+    }
+    #endregion
 
     #region Save Data
     void SaveInformation()
