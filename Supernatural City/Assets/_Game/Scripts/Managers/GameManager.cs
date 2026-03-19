@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateUI();
+        Check_Illegall();
 
         //TEMP
         if (Input.GetKeyUp(KeyCode.F9))
@@ -65,13 +69,21 @@ public class GameManager : MonoBehaviour
             DeleteProgress();
         }
         Money += MoneyGeneration;
-        if (ElectraGeneration < Usage_Elec || WaterGeneration < Usage_Water || MagicGeneration < Usage_Magic)
+        // Add later to the if statement: || MagicGeneration < Usage_Magic 
+        if (ElectraGeneration < Usage_Elec || WaterGeneration < Usage_Water)
         {
             Resource_Error(true);
-        } else
-        {
-            Resource_Error(false);
         }
+        else { Resource_Error(false); }
+    }
+
+    private void Check_Illegall()
+    {
+        if (Demand_Commercial > 100) { Demand_Commercial = 100; }
+        if (Demand_Elec > 100) { Demand_Elec = 100; }
+        if (Demand_Housing > 100) { Demand_Housing = 100; }
+        if (Demand_Magic > 100) { Demand_Magic = 100; }
+        if (Demand_Water > 100) { Demand_Water = 100; }
     }
     #region UI stuff
     public void UpdateUI()
@@ -103,8 +115,13 @@ public class GameManager : MonoBehaviour
     public void Resource_Error(bool TheBool)
     {
         Error_Box.gameObject.SetActive(TheBool);
-
-        Error_Text.text = "You lack the following:";
+        Error_Text.text = "You lack the following: ";
+        List<string> lacking = new List<string>();
+        if (WaterGeneration < Usage_Water) { lacking.Add("Water"); }
+        if (ElectraGeneration < Usage_Elec) { lacking.Add("Electricity"); }
+        //if (MagicGeneration < Usage_Magic) { lacking.Add("Magic"); }
+        Error_Text.text += string.Join(", ", lacking);
+        Error_Text.text.TrimEnd(',');
     }
     #endregion
 
