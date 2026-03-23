@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   Building_Name: Water Tower
   Need_Road: 0
+  Building_Sprite: {fileID: 11400000, guid: 32842cc9faa4dea439555b8da09d2a62, type: 2}
+  Type: 4
+  Population_Sort: 0
   People_Amount: 0
   Cost: 1000
   UpKeepCost: 5
-  Building_Sprite: {fileID: 11400000, guid: 32842cc9faa4dea439555b8da09d2a62, type: 2}
+  MoneyProduceAmount: 10
+  ResearchPointsAdded: 0
   Need_Electricity: 0
   Need_Water: 0
   Need_Magic: 0
   Functional: 0
-  Producing: 3
-  Type: 4
-  MoneyProduceAmount: 10
+  Producing: 2
   Product_Produce_Amount: 80
