@@ -9,6 +9,7 @@ public class Building : ScriptableObject
     public int People_Amount;
     public int Cost;
     public int UpKeepCost;
+    public int ResearchPointsAdded;
     public TileBase Building_Sprite;
     // Needs
     public int Need_Electricity;

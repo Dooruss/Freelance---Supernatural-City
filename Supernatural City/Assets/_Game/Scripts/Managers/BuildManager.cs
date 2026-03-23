@@ -102,6 +102,7 @@ public class BuildManager : MonoBehaviour
         CurrentTileMap.SetTile(Pos, CurrentTile);
         PlacedBuildings[Pos] = Building;
         gameManager.Money -= Building.Cost;
+        gameManager.Research_Points += Building.ResearchPointsAdded;
         gameManager.UpKeepCosts += Building.UpKeepCost;
         gameManager.Usage_Elec += Building.Need_Electricity;
         gameManager.Usage_Magic += Building.Need_Magic;

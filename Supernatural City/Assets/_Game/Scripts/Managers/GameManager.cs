@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int Population;
     [Header("int Resources")]
     public int Money;
-    private int Research_Points;
+    public int Research_Points;
     [Header("Demand & Usage")]
     public int Demand_Housing;
     public int Demand_Commercial;
@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     [Header("Other")]
     [SerializeField] private Tilemap Buildable_Tilemap; // For saving the tiles
     [SerializeField] private TimeManager TimeManager;
+    private Color Red = new Color(224, 70, 45, 255);
+    private Color Green = new Color(42, 128, 20, 255);
 
     private void Awake()
     {
@@ -89,7 +91,9 @@ public class GameManager : MonoBehaviour
     public void UpdateUI()
     {
         Text_Money.text = Money.ToString();
-        Text_MoneyPerHour.text = MoneyGeneration.ToString() + " Per Day";
+        Text_MoneyPerHour.text = MoneyGeneration - UpKeepCosts + " Per Day";
+        if (MoneyGeneration - UpKeepCosts <= 0) { Text_MoneyPerHour.color = Red / 255; }
+        else { Text_MoneyPerHour.color = Green / 255; }
         Text_Research_Points.text = Research_Points.ToString();
         Text_Population.text = Population.ToString();
         //Demand
