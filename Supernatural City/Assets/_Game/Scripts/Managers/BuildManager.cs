@@ -74,6 +74,7 @@ public class BuildManager : MonoBehaviour
                         //yay shops
                         BuildItem(Pos, Building);
                         gameManager.MoneyGeneration += Building.MoneyProduceAmount;
+                        gameManager.CommercialAmount += 1;
                         break;
                     case Building.Building_Type.Park:
                         //Yay happy

@@ -10,15 +10,16 @@ public class GameManager : MonoBehaviour
 {
 
     public int Population;
+    public int CommercialAmount;
     [Header("int Resources")]
     public int Money;
     public int Research_Points;
     [Header("Demand & Usage")]
-    public int Demand_Housing;
-    public int Demand_Commercial;
-    public int Demand_Elec;
-    public int Demand_Water;
-    public int Demand_Magic;
+    public float Demand_Housing;
+    public float Demand_Commercial;
+    public float Demand_Elec;
+    public float Demand_Water;
+    public float Demand_Magic;
     //usage
     public int Usage_Magic;
     public int Usage_Water;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateUI();
         Check_Illegall();
+        ManageDemand();
 
         //TEMP
         if (Input.GetKeyUp(KeyCode.F9))
@@ -79,13 +81,38 @@ public class GameManager : MonoBehaviour
         else { Resource_Error(false); }
     }
 
+    private void ManageDemand()
+    {
+        //Housing
+        if (CommercialAmount * 5  > Population )
+        {
+            Demand_Housing += 0.20f;
+            Demand_Commercial -= 0.10f;
+        }
+
+        //Commercial
+        if (Population > CommercialAmount * 10)
+        {
+            Demand_Commercial += 0.20f;
+            Demand_Housing -= 0.20f;
+        }
+
+        //Resources
+
+    }
+
     private void Check_Illegall()
     {
-        if (Demand_Commercial > 100) { Demand_Commercial = 100; }
-        if (Demand_Elec > 100) { Demand_Elec = 100; }
-        if (Demand_Housing > 100) { Demand_Housing = 100; }
-        if (Demand_Magic > 100) { Demand_Magic = 100; }
-        if (Demand_Water > 100) { Demand_Water = 100; }
+        if (Demand_Commercial > 1f) { Demand_Commercial = 1f; }
+        if (Demand_Commercial < 0f) { Demand_Commercial = 0f; }
+        if (Demand_Elec > 1f) { Demand_Elec = 1f; }
+        if (Demand_Elec < 0f) { Demand_Elec = 0f; }
+        if (Demand_Housing > 1f) { Demand_Housing = 1f; }
+        if (Demand_Housing < 0f) { Demand_Housing = 0f; }
+        if (Demand_Magic > 1f) { Demand_Magic = 1f; }
+        if (Demand_Magic < 0f) { Demand_Magic = 1f; }
+        if (Demand_Water > 1f) { Demand_Water = 1f; }
+        if (Demand_Water < 0f) { Demand_Water = 0f; }
     }
     #region UI stuff
     public void UpdateUI()
@@ -98,7 +125,7 @@ public class GameManager : MonoBehaviour
         Text_Population.text = Population.ToString();
         //Demand
         Text_Demand_Housing.text = Demand_Housing.ToString();
-        Text_Demand_Commercial.text = Text_Demand_Commercial.ToString();
+        Text_Demand_Commercial.text = Demand_Commercial.ToString();
         Text_Demand_Water.text = Demand_Water.ToString();
         Text_Demand_Electricity.text = Demand_Elec.ToString();
         Text_Demand_Magic.text = Demand_Magic.ToString();
@@ -143,11 +170,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Month", TimeManager.Month);
         PlayerPrefs.SetInt("Year", TimeManager.Year);
         //Demand
-        PlayerPrefs.SetInt("Demand_Housing", Demand_Housing);
-        PlayerPrefs.SetInt("Demand_Commercial", Demand_Commercial);
-        PlayerPrefs.SetInt("Demand_Elec", Demand_Elec);
-        PlayerPrefs.SetInt("Demand_Water", Demand_Water);
-        PlayerPrefs.SetInt("Demand_Magic", Demand_Magic);
+        PlayerPrefs.SetFloat("Demand_Housing", Demand_Housing);
+        PlayerPrefs.SetFloat("Demand_Commercial", Demand_Commercial);
+        PlayerPrefs.SetFloat("Demand_Elec", Demand_Elec);
+        PlayerPrefs.SetFloat("Demand_Water", Demand_Water);
+        PlayerPrefs.SetFloat("Demand_Magic", Demand_Magic);
         //Generation 
         PlayerPrefs.SetInt("MoneyGeneration", MoneyGeneration);
         PlayerPrefs.SetInt("ElectraGeneration", ElectraGeneration);
@@ -167,7 +194,7 @@ public class GameManager : MonoBehaviour
         TimeManager.Month = PlayerPrefs.GetInt("Month", 1);
         TimeManager.Year = PlayerPrefs.GetInt("Year", 1);
         //Demand
-        Demand_Housing = PlayerPrefs.GetInt("Demand_Housing", 0);
+        Demand_Housing = PlayerPrefs.GetInt("Demand_Housing", 1);
         Demand_Commercial = PlayerPrefs.GetInt("Demand_Commercial", 0);
         Demand_Water = PlayerPrefs.GetInt("Demand_Water", 0);
         Demand_Elec = PlayerPrefs.GetInt("Demand_Elec", 0);
