@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 524bd7d02e9fd0840997d8126cf56375, type: 3}
-  m_Name: Test_house
+  m_Name: Elec Generator 1
   m_EditorClassIdentifier: Assembly-CSharp::Building
-  Building_Name: Test House
-  Need_Road: 1
-  People_Amount: 4
-  Cost: 200
-  UpKeepCost: 5
-  Building_Sprite: {fileID: 11400000, guid: 39a73a29a84dae549b9477e817d468ca, type: 2}
-  Need_Electricity: 10
-  Need_Water: 10
-  Need_Magic: 10
+  Building_Name: Magic_Generator
+  Need_Road: 0
+  People_Amount: 0
+  Cost: 2000
+  UpKeepCost: 7
+  Building_Sprite: {fileID: 11400000, guid: 49515fe08ebd0cd4fb5cc8739ee70220, type: 2}
+  Need_Electricity: 0
+  Need_Water: 0
+  Need_Magic: 0
   Functional: 0
-  Producing: 0
-  Type: 1
-  MoneyProduceAmount: 25
-  Product_Produce_Amount: 0
+  Producing: 4
+  Type: 4
+  MoneyProduceAmount: 10
+  Product_Produce_Amount: 10

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public int Usage_Elec;
     [Header("Generation")]
     public int MoneyGeneration = 0;
+    public int UpKeepCosts;
     public int WaterGeneration = 0;
     public int MagicGeneration = 0;
     public int ElectraGeneration = 0;
@@ -68,9 +69,8 @@ public class GameManager : MonoBehaviour
         {
             DeleteProgress();
         }
-        Money += MoneyGeneration;
-        // Add later to the if statement: || MagicGeneration < Usage_Magic 
-        if (ElectraGeneration < Usage_Elec || WaterGeneration < Usage_Water)
+        Money += MoneyGeneration - UpKeepCosts;
+        if (ElectraGeneration < Usage_Elec || WaterGeneration < Usage_Water || MagicGeneration < Usage_Magic)
         {
             Resource_Error(true);
         }
@@ -100,8 +100,11 @@ public class GameManager : MonoBehaviour
         Text_Demand_Magic.text = Demand_Magic.ToString();
         //Usage & Production
         Text_Production[0].text = "Production: " + WaterGeneration.ToString();
+        Text_Usage[0].text = "Usage: " + Usage_Water.ToString();
         Text_Production[1].text = "Production: " + ElectraGeneration.ToString();
+        Text_Usage[1].text = "Usage: " + Usage_Elec.ToString();
         Text_Production[2].text = "Production: " + MagicGeneration.ToString();
+        Text_Usage[2].text = "Usage: " + Usage_Magic.ToString();
     }
 
     public void CloseInfoUI()
@@ -119,7 +122,7 @@ public class GameManager : MonoBehaviour
         List<string> lacking = new List<string>();
         if (WaterGeneration < Usage_Water) { lacking.Add("Water"); }
         if (ElectraGeneration < Usage_Elec) { lacking.Add("Electricity"); }
-        //if (MagicGeneration < Usage_Magic) { lacking.Add("Magic"); }
+        if (MagicGeneration < Usage_Magic) { lacking.Add("Magic"); }
         Error_Text.text += string.Join(", ", lacking);
         Error_Text.text.TrimEnd(',');
     }
@@ -129,6 +132,7 @@ public class GameManager : MonoBehaviour
     void SaveInformation()
     {
         PlayerPrefs.SetInt("Money", Money);
+        PlayerPrefs.SetInt("UpKeep", UpKeepCosts);
         PlayerPrefs.SetInt("Population", Population);
         PlayerPrefs.SetInt("Research_Points", Research_Points);
         PlayerPrefs.SetInt("Day", TimeManager.Day);
@@ -152,6 +156,7 @@ public class GameManager : MonoBehaviour
     void GetSaveData()
     {
         Money = PlayerPrefs.GetInt("Money", 400000);
+        UpKeepCosts = PlayerPrefs.GetInt("UpKeep", 5);
         Population = PlayerPrefs.GetInt("Population", 0);
         Research_Points = PlayerPrefs.GetInt("Research_Points", 10);
         TimeManager.Day = PlayerPrefs.GetInt("Day", 1);

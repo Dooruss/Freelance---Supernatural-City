@@ -16,6 +16,7 @@ MonoBehaviour:
   Need_Road: 0
   People_Amount: 0
   Cost: 1000
+  UpKeepCost: 5
   Building_Sprite: {fileID: 11400000, guid: 32842cc9faa4dea439555b8da09d2a62, type: 2}
   Need_Electricity: 0
   Need_Water: 0
@@ -23,5 +24,5 @@ MonoBehaviour:
   Functional: 0
   Producing: 3
   Type: 4
-  MoneyProduceAmount: 4
+  MoneyProduceAmount: 10
   Product_Produce_Amount: 10

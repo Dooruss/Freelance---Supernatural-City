@@ -8,6 +8,7 @@ public class Building : ScriptableObject
     public bool Need_Road;
     public int People_Amount;
     public int Cost;
+    public int UpKeepCost;
     public TileBase Building_Sprite;
     // Needs
     public int Need_Electricity;

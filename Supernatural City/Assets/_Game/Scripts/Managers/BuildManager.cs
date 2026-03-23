@@ -60,11 +60,6 @@ public class BuildManager : MonoBehaviour
                     return;
                 }
 
-                if (ProduceItem(Building))
-                {
-                    Debug.Log("Doesn't produce");
-                }
-
                 switch (Building.Type)
                 {
                     case Building.Building_Type.Road:
@@ -85,9 +80,15 @@ public class BuildManager : MonoBehaviour
                         BuildItem(Pos, Building);
                         break;
                     case Building.Building_Type.Generator:
+                        //if (Building.Building_Name == "Magic_Generator") { if (!CheckGroundType(Pos)) { break; } }
                         BuildItem(Pos, Building);
                         gameManager.MoneyGeneration += Building.MoneyProduceAmount;
                         break;
+                }
+
+                if (ProduceItem(Building))
+                {
+                    Debug.Log("Doesn't produce");
                 }
 
             }
@@ -101,6 +102,7 @@ public class BuildManager : MonoBehaviour
         CurrentTileMap.SetTile(Pos, CurrentTile);
         PlacedBuildings[Pos] = Building;
         gameManager.Money -= Building.Cost;
+        gameManager.UpKeepCosts += Building.UpKeepCost;
         gameManager.Usage_Elec += Building.Need_Electricity;
         gameManager.Usage_Magic += Building.Need_Magic;
         gameManager.Usage_Water += Building.Need_Water;
@@ -197,13 +199,10 @@ public class BuildManager : MonoBehaviour
         return false;
     }
 
-    private void CheckGroundType(Vector3Int Pos)
-    {
-        if (GroundTileMap.HasTile(Pos))
-        {
-            
-        }
-    }
+    //private bool CheckGroundType(Vector3Int Pos)
+    //{
+
+    //}
 
     #endregion
 }
