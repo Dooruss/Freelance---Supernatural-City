@@ -9,6 +9,7 @@ public class Building : ScriptableObject
     public bool Need_Road;
     public TileBase Building_Sprite;
     [SerializeField] public Building_Type Type;
+
     [Header("Population & Money")]
     [SerializeField] public Population_Type Population_Sort;
     public int People_Amount;
@@ -16,21 +17,24 @@ public class Building : ScriptableObject
     public int UpKeepCost;
     [SerializeField] public int MoneyProduceAmount;
     public int ResearchPointsAdded;
+
     [Header("Needs")]
     public int Need_Electricity;
     public int Need_Water;
     public int Need_Magic;
     public bool Functional;
+
     [Header("Producing")]
     [SerializeField] public Product_Produced Producing;
-    
     [SerializeField] public int Product_Produce_Amount;
+
+    //Enums
     public enum Product_Produced { None, Electricity, Water, Magic }
     public enum Building_Type { Road, Housing, Commercial, Park, Generator }
-    public enum Population_Type { Witch , Vampire}
+    public enum Population_Type { Witch, Vampire }
 
 
 
 
-   
+
 }
