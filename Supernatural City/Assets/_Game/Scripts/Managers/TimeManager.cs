@@ -33,7 +33,7 @@ public class TimeManager : MonoBehaviour
         if (ByButton) { PauseScreen.SetActive(false); }
     }
 
-    public void SpeedTime(float Times)
+    public void SpeedTime(int Times)
     {
         Time.timeScale = 1 * Times;
     }
