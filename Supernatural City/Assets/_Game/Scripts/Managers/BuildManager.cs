@@ -67,7 +67,7 @@ public class BuildManager : MonoBehaviour
                         break;
                     case Building.Building_Type.Housing:
                         BuildItem(Pos, Building);
-                        gameManager.Population += Building.People_Amount;
+                        AddPopulation(Building);
                         gameManager.MoneyGeneration += Building.MoneyProduceAmount;
                         break;
                     case Building.Building_Type.Commercial:
@@ -199,6 +199,20 @@ public class BuildManager : MonoBehaviour
                 break;
         }
         return false;
+    }
+
+    private void AddPopulation(Building BuildingObject)
+    {
+        gameManager.Population += BuildingObject.People_Amount;
+        switch (BuildingObject.Population_Sort)
+        {
+            case Building.Population_Type.Witch:
+                gameManager.Population_Witch += BuildingObject.People_Amount;
+                break;
+            case Building.Population_Type.Vampire:
+                gameManager.Population_Vampire += BuildingObject.People_Amount;
+                break;
+        }
     }
 
     //private bool CheckGroundType(Vector3Int Pos)

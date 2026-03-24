@@ -5,6 +5,7 @@ public class ResearchTree : MonoBehaviour
     private GameManager gameManager;
 
     [SerializeField] private GameObject[] AllUnlockables;
+    [SerializeField] private GameObject[] AllResearchButtons;
 
     void Start()
     {
