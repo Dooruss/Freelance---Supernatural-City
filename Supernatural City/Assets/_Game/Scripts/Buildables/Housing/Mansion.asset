@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524bd7d02e9fd0840997d8126cf56375, type: 3}
+  m_Name: Mansion
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  Building_Name: Mansion
+  Need_Road: 1
+  Building_Sprite: {fileID: 11400000, guid: 39a73a29a84dae549b9477e817d468ca, type: 2}
+  Type: 1
+  Population_Sort: 0
+  People_Amount: 6
+  Cost: 500
+  UpKeepCost: 15
+  MoneyProduceAmount: 40
+  ResearchPointsAdded: 2
+  Need_Electricity: 15
+  Need_Water: 10
+  Need_Magic: 20
+  Functional: 0
+  Producing: 0
+  Product_Produce_Amount: 0

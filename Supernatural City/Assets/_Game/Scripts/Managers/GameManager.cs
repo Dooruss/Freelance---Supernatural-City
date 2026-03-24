@@ -8,10 +8,11 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
-
-    public int Population;
-    public int CommercialAmount;
     [Header("int Resources")]
+    public int Population;
+    public int Population_Witch;
+    public int Population_Vampire;
+    public int CommercialAmount;
     public int Money;
     public int Research_Points;
     [Header("Demand & Usage")]
