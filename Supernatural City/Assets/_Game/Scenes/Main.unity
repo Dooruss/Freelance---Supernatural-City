@@ -4247,7 +4247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResearchTree
   AllUnlockables:
-  - {fileID: 1027663593}
+  - {fileID: 1008557986}
+  AllResearchButtons: []
 --- !u!1 &407099876
 GameObject:
   m_ObjectHideFlags: 0

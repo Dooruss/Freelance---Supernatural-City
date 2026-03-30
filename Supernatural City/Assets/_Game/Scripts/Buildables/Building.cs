@@ -9,6 +9,7 @@ public class Building : ScriptableObject
     public bool Need_Road;
     public TileBase Building_Sprite;
     [SerializeField] public Building_Type Type;
+    [SerializeField] public Occult_Type Occult_Type_Happiness;
 
     [Header("Population & Money")]
     [SerializeField] public Population_Type Population_Sort;
@@ -33,8 +34,6 @@ public class Building : ScriptableObject
     public enum Building_Type { Road, Housing, Commercial, Park, Generator }
     public enum Population_Type { Witch, Vampire }
 
-
-
-
+    public enum Occult_Type {Witch , Vampire }
 
 }

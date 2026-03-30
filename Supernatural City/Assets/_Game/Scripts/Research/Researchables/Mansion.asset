@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Researchable
   ObjectName: Mansion
   PointCost: 10
-  IsUnlocked: 0
-  IsVisible: 0
+  IsUnlocked: 1
+  IsVisible: 1
