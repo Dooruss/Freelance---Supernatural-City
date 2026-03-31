@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524bd7d02e9fd0840997d8126cf56375, type: 3}
   m_Name: Test_Shop
   m_EditorClassIdentifier: Assembly-CSharp::Building
-  Building_Name: Test Shop
+  Building_Name: Garden
   Need_Road: 1
+  Building_Sprite: {fileID: 11400000, guid: 776c783a463550048a38026a95c609e0, type: 2}
+  Type: 2
+  Occult_Type_Happiness: 0
+  Population_Sort: 0
   People_Amount: 0
   Cost: 250
   UpKeepCost: 75
+  MoneyProduceAmount: 100
   ResearchPointsAdded: 1
-  Building_Sprite: {fileID: 11400000, guid: 39a73a29a84dae549b9477e817d468ca, type: 2}
   Need_Electricity: 10
   Need_Water: 10
   Need_Magic: 10
   Functional: 0
   Producing: 0
-  Type: 2
-  MoneyProduceAmount: 100
   Product_Produce_Amount: 0

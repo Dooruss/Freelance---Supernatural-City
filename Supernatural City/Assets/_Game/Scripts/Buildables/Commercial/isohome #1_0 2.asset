@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Magic_Generator
+  m_Name: isohome #1_0 2
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: -3164809056393425246, guid: c551de00516d0574aa9e44772b29b753, type: 3}
+  m_Sprite: {fileID: 3432582381386852895, guid: 58b979cbb91ccf94aa2849128b5ebd05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
