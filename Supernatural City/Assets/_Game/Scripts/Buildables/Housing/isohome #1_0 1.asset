@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Electricity Generator
+  m_Name: isohome #1_0 1
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: -4495656287947795154, guid: 4a389e6606ca5224b8cc200dc87fb02f, type: 3}
+  m_Sprite: {fileID: 8681775086259341808, guid: cad37222f173ea74db54dcfe5e0f1366, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
