@@ -214,11 +214,5 @@ public class BuildManager : MonoBehaviour
                 break;
         }
     }
-
-    //private bool CheckGroundType(Vector3Int Pos)
-    //{
-
-    //}
-
     #endregion
 }
